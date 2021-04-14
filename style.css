@@ -1,0 +1,177 @@
+/*
+Ενδεικτικοί επιλογείς για τη διαμόρφωση του στυλ
+
+Μπορείτε να προσθέσετε τις δηλώσεις στους παρακάτω κανόνες και να εμπλουτίσετε με δικούς σας κανόνες.
+*/
+
+
+/* Χρειάζεται για να φανούν οι σημαίες στους φυλλομετρητές chrome-based από Windows 10 */
+
+@font-face {
+    font-family: 'TwemojiMozilla';
+    src: url('TwemojiMozilla.ttf');
+}
+
+body {
+    font-family: 'Open Sans', 'TwemojiMozilla';
+    font-size: 2em;
+    background-color: #fff;
+    color: #444;
+}
+.game-panel {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(230px, 15%) auto;
+    grid-template-rows: 100px 25px auto;
+    grid-template-areas:
+        "sidebar mycountry"
+        "sidebar loading"
+        "sidebar main-panel";
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+/**************SideBar*************/
+#sidebar {
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    background-color: #F50888;
+    border-radius: 8px;
+    color: #fff;
+}
+.title {
+    margin-top: 20%;
+    margin-left: 10%;
+}
+.roundNscore {
+    flex-grow: 1;
+    margin-left: 10%;
+    display: flex;
+    flex-direction: column;
+}
+.round {
+    margin-bottom: 0px;
+}
+.score {
+    margin-top: 0px;
+}
+.buttons {
+    margin-left: 10%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border-radius: 4px;
+}
+button {
+    width: 200px;
+    height: 66px;
+    border: none;
+}
+/********Main-Panel***********/
+.main-panel {
+    grid-area: main-panel;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: space-evenly;
+}
+/**************Item with country****************/
+.itemCountry {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    line-height: 0;
+    text-align: center;
+    margin: 20px;
+    border-radius: 8px;
+}
+.correct {
+    border: 5px solid green;
+}
+.wrong {
+    border: 5px solid red;
+}
+/**************Header***************/
+.my-country {
+    grid-area: mycountry;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    border-radius: 8px;
+    background-color: #937F8E;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.progress {
+    grid-area: loading;
+    position: sticky;
+    font-size: 50%;
+    background-color: blue;
+    color: white;
+    text-align: center;
+    border-color:  #E4E0E2;
+    border-style: solid;
+    border-radius: 5px;
+}
+/*********Overlays**************/
+.overlay {
+    grid-area: main-panel;
+    display: flex;
+    align-items: center;
+    color: black;
+    text-align: center;
+    line-height: 600px;
+    background-color: rgb(128, 128, 128, 0.9);
+    visibility: hidden;
+}
+.winoverlay {
+    grid-area: main-panel;
+    display: flex;
+    align-items: center;
+    color: black;
+    text-align: center;
+    line-height: 600px;
+    background-color: rgb(128, 128, 128, 0.9);
+    visibility: hidden;
+}
+
+@media (max-width: 800px) {
+    /* ενδεικτικά */
+    /*  ... */
+}
+
+
+
+
+
+
+
+
+#score {}
+
+#neighbours-panel {}
+
+.neighbour {}
+
+.was-clicked.neighbour-is-valid {}
+
+.was-clicked.neighbour-is-invalid {}
+
+.neighbour:not(.was-clicked) {}
+
+#next-round-panel {}
+
+
+
+
+/* ειδικά για τους φυλλομετρητές που προέρχονται από τον chrome καθώς 
+υποστηρίζουν λιγότερο καλά το στοιχείο progress από ότι ο firefox,
+όσον αφορά το CSS (που και σε αυτόν έχει προβληματική υποστήριξη)
+*/
+
+#progress::-webkit-progress-bar {
+    border-radius: 5px;
+}

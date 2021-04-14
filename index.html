@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Βρες τους γείτονες</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="game-panel">
+        <div class="my-country", id="my-country">Πατήστε Νέο παιχνίδι για εκκίνηση 
+        </div>
+        <div class="progress", id="progress">
+        </div>
+        <div class="sidebar", id="sidebar">
+            <div class="title", id="title">
+                <strong>Βρες τους γείτονες</strong>
+            </div>
+            <div class="roundNscore", id="roundNscore">
+                <p class="round">Γύρος: <span>0</span></p>
+                <p class="score">Σκόρ: <span>0</span></p>
+            </div>
+            <div id="buttons">
+                <button id="nextRound" class="buttons" disabled>Επόμενη χώρα</button><br>
+                <button id="newGame" class="buttons">Νέο παιχνίδι</button>
+            </div>
+        </div>
+        <div class="main-panel" id="main-panel">
+        </div>
+        <div class="overlay"><strong style="color: darkred;;margin: auto;">Κρίμα, χάσατε! Παρακαλώ επιλέξτε Επόμενη χώρα για να συνεχίσετε.</strong></div>
+        <div class="winoverlay"><strong style="color: black;margin: auto;">Τους βρήκατε όλους! Παρακαλώ επιλέξτε Επόμενη χώρα για να συνεχίσετε.</strong></div>
+    </div>
+    <script src="countries.js"></script>
+    <script src="asynch.js"></script>
+</body>
+<script>
+//Το παρακάτω αφορά μόνο τους χρήστες macOS.
+if (navigator.appVersion.indexOf("Macintosh")>0){
+  document.body.style.fontFamily = '"Open Sans"';
+}
+</script>
+</html>
